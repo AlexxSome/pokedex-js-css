@@ -1,0 +1,20 @@
+# Ignorar archivos generados por WebStorm
+.idea/
+
+# Ignorar archivos y directorios generados por npm
+node_modules/
+
+# Ignorar archivos de compilación (ejemplo: para proyectos con webpack)
+/dist/
+/build/
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos temporales
+*.tmp
+
+# Ignorar archivos de configuración específicos del usuario (opcional)
+*.iml
+*.iws
+*.ipr
