@@ -31,7 +31,6 @@ function firstPage(){
 
             pokemonContainer.appendChild(img);
         });
-
     }, 500)
 }
 
@@ -46,3 +45,7 @@ async function getData(url = '') {
 }
 
 init().then(r => r);
+
+function searchPokemon(){
+    console.log("searchPokemon")
+};

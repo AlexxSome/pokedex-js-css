@@ -10,10 +10,14 @@
 </head>
 <body>
 <section class="container">
-    <h1>Pokedex</h1>
+    <img src="./images/pokemon_logo%20-%20copia.png" class="logo"/>
     <h3>Busca un Pokemón por su nombre o usando su número de la Pokedex nacional.</h3>
+    <div class="inputContainer">
     <label for="buscarPokemon"></label>
-    <input type="text" id="buscarPokemon" class="input" placeholder="Buscar Pokemón"></input>
+    <input type="text" id="buscarPokemon" class="input" placeholder="Buscar Pokemón"><a onclick="searchPokemon()"><img src="./images/lupa.png" class="lupa"></a></input>
+
+    </div>
+
 </section>
 
 <section class="pokemonContainer" id="pokemonContainer">

@@ -1,7 +1,11 @@
-h1{
-    font-family: sans-serif;
-    font-size: 45px;
-    color:red;
+body{
+    background-color:#ffc93c ;
+}
+
+.logo{
+    max-width: 20%;
+    text-align: center;
+    margin: 1% auto auto;
 }
 
 h3{
@@ -16,19 +20,37 @@ h3{
     align-content: center;
 }
 
+.inputContainer{
+    display:flex;
+    justify-content: center;
+}
+
 .input{
     text-align: center;
     width: 250px;
     margin:auto;
-    border-radius:5px;
+    border-radius:20px;
     border: 1px solid black;
     height: 30px;
+    position:absolute;
 }
 
 .input::placeholder{
     font-size: 15px;
 }
 
+.lupa{
+    max-width: 5%;
+    position:relative;
+    left:19%;
+    margin-top:0.7%;
+
+}
+
+.lupa:hover{
+    transform: translateY(1px);
+
+}
 
 .pokemonContainer{
     display:grid;
