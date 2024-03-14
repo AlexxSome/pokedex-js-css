@@ -47,5 +47,19 @@ async function getData(url = '') {
 init().then(r => r);
 
 function searchPokemon(){
-    console.log("searchPokemon")
+    let input = document.getElementById("buscarPokemon");
+    const url = "https://pokeapi.co/api/v2/pokemon/" + input.value
+    console.log(url);
+    const getPokemon = getData(url);
+    getPokemon.then((result) => {
+        localStorage.setItem('pokeList', JSON.stringify(result.results));
+        firstPage();
+    }).catch((error) => {
+        console.error('Ocurrió un error:', error);
+    });
 };
+
+function renderPokemon(){
+
+}
+
