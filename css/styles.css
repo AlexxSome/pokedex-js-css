@@ -63,7 +63,44 @@ h3{
 }
 
 .pokemonContainer > img{
-    width:200px;
+    width:100%;
     background-color: #FDECA0;
     border-radius: 19px;
+}
+
+.containerImg{
+    display: flex;
+    gap: 5%;
+    min-height: 30%;
+    min-width: 30%;
+}
+
+.containerImg > img{
+    width:100%;
+
+    background-color: #FDECA0;
+    border-radius: 19px;
+}
+
+.searchedPokemon{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    margin: 2% auto;
+    flex-direction: column;
+}
+
+.detailPokemon{
+    font-family: sans-serif;
+}
+
+.detailTitlePokemon{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.rowDetail{
+    display: flex;
+    flex-direction: row;
 }

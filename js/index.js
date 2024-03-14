@@ -19,7 +19,6 @@ function firstPage(){
 
         list.forEach(pokemon => {
             let img = document.createElement("img");
-            console.log("poke: ", pokemon)
             let getPokemon = getData(pokemon.url)
 
             getPokemon.then((poke) => {
@@ -47,19 +46,62 @@ async function getData(url = '') {
 init().then(r => r);
 
 function searchPokemon(){
-    let input = document.getElementById("buscarPokemon");
-    const url = "https://pokeapi.co/api/v2/pokemon/" + input.value
-    console.log(url);
+    let input       = document.getElementById("buscarPokemon");
+    const container = document.getElementById("pokemonContainer");
+    const url       = "https://pokeapi.co/api/v2/pokemon/" + input.value
+
     const getPokemon = getData(url);
     getPokemon.then((result) => {
         localStorage.setItem('pokeList', JSON.stringify(result.results));
-        firstPage();
+        console.log(result)
+        let img = document.createElement("img");
+        let shiny = document.createElement("img");
+        let titleName = document.createElement("p");
+        let name = document.createElement("p");
+        let titleId = document.createElement("p");
+        let id = document.createElement("p");
+        let containerDetail = document.createElement("div");
+        let containerImg = document.createElement("div");
+        let rowDetailName = document.createElement("div");
+        let rowDetailId = document.createElement("div");
+
+        img.setAttribute("src", result.sprites.front_default);
+        shiny.setAttribute("src", result.sprites.back_default);
+        name.textContent = result.name.toUpperCase();
+        titleName.textContent = "Nombre : ";
+        id.textContent = result.id;
+        titleId.textContent = "N° Pokedex : ";
+
+        container.classList.add("searchedPokemon");
+        containerImg.classList.add("containerImg");
+        titleId.classList.add("detailTitlePokemon");
+        titleName.classList.add("detailTitlePokemon");
+        name.classList.add("detailPokemon");
+        id.classList.add("detailPokemon");
+        rowDetailName.classList.add("rowDetail");
+        rowDetailId.classList.add("rowDetail");
+
+        container.appendChild(containerImg);
+        containerImg.appendChild(img);
+        containerImg.appendChild(shiny);
+        rowDetailName.appendChild(titleName);
+        rowDetailName.appendChild(name);
+        containerDetail.appendChild(rowDetailName);
+        rowDetailId.appendChild(titleId);
+        rowDetailId.appendChild(id);
+        containerDetail.appendChild(rowDetailId);
+        container.appendChild(containerDetail);
     }).catch((error) => {
         console.error('Ocurrió un error:', error);
     });
+
+    clearScreen();
 };
 
-function renderPokemon(){
-
+function clearScreen(){
+    const container = document.getElementById("pokemonContainer");
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
 }
 
